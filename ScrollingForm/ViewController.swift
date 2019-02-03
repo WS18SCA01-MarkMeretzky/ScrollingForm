@@ -18,6 +18,14 @@ class ViewController: UIViewController {
         registerForKeyboardNotifications();
     }
     
+    //Called when the return key of any UITextField is tapped.
+
+    @IBAction func returnKeyTapped(_ sender: UITextField) {
+        sender.resignFirstResponder();
+    }
+    
+    //MARK: Keyboard Notifications
+    
     func registerForKeyboardNotifications() {
         NotificationCenter.default.addObserver(
             self,
@@ -49,9 +57,4 @@ class ViewController: UIViewController {
         scrollView.scrollIndicatorInsets = .zero;
     }
 
-    //Called when the return key of any UITextField is tapped.
-
-    @IBAction func returnKeyTapped(_ sender: UITextField) {
-        sender.resignFirstResponder();
-    }
 }
